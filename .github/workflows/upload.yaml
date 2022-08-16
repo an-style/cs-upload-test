@@ -15,6 +15,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Build
+        run: npm run build
+        working-directory: ./
+
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'
         with:
